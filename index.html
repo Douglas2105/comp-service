@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компьютерная помощь в Приморско-Ахтарске — 24/7 | Михаил</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sea: {
+                            100: '#e0f7fa',
+                            500: '#00bcd4',
+                            700: '#00838f',
+                            900: '#006064',
+                        },
+                        sand: {
+                            100: '#fff8e1',
+                            500: '#ffca28',
+                            600: '#ffb300',
+                        },
+                        tech: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(0, 131, 143, 0.7) 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .speed-gauge {
+            transition: transform 0.5s ease-out;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-tech-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-microchip text-sea-500 text-2xl"></i>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">CompService</h1>
+                    <p class="text-xs text-sea-500">Приморско-Ахтарск</p>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#services" class="hover:text-sea-500 transition">Услуги</a>
+                <a href="#tools" class="hover:text-sea-500 transition">Инструменты</a>
+                <a href="#education" class="hover:text-sea-500 transition">Обучение</a>
+                <a href="#business" class="hover:text-sea-500 transition">Бизнесу</a>
+                <a href="#contacts" class="hover:text-sea-500 transition">Контакты</a>
+            </div>
+            <a href="tel:+79183338669" class="bg-sea-500 hover:bg-sea-700 text-white px-4 py-2 rounded-full font-bold transition flex items-center gap-2">
+                <i class="fas fa-phone-alt"></i>
+                <span>+7 (918) 333-86-69</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://image.qwenlm.ai/public_source/e42ee1c9-4db4-4d89-bd47-32abca708c5d/1e67325e9-eda0-4e7b-94e6-f2ea34b9b136.png" alt="Tech Sea Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <span class="inline-block bg-sand-500 text-tech-900 px-3 py-1 rounded-full text-sm font-bold mb-4 animate-bounce">
+                🚀 Срочный выезд мастера за 1 час
+            </span>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                Компьютерная помощь <br> <span class="text-sea-500">в Приморско-Ахтарске</span>
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
+                От сборки игровых монстров до обучения пенсионеров. Решаю любые проблемы с техникой 24/7.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('modal-form').classList.remove('hidden')" class="bg-sea-500 hover:bg-sea-700 text-white text-lg px-8 py-4 rounded-lg font-bold shadow-lg transform hover:-translate-y-1 transition">
+                    Вызвать мастера
+                </button>
+                <a href="#tools" class="bg-transparent border-2 border-white hover:bg-white hover:text-tech-900 text-white text-lg px-8 py-4 rounded-lg font-bold transition">
+                    Полезные инструменты
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-tech-900 mb-4">Мои Услуги</h3>
+                <div class="w-20 h-1 bg-sea-500 mx-auto rounded"></div>
+                <p class="text-gray-600 mt-4">Полный спектр работ для дома и офиса</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-6 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl transition bg-white group">
+                    <div class="w-16 h-16 bg-sea-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-sea-500 transition">
+                        <i class="fas fa-tools text-2xl text-sea-700 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Ремонт и Диагностика</h4>
+                    <p class="text-gray-600 text-sm mb-4">Восстановление после залития, замена комплектующих, чистка от пыли.</p>
+                    <span class="text-sea-700 font-bold">от 500 ₽</span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-6 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl transition bg-white group">
+                    <div class="w-16 h-16 bg-sea-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-sea-500 transition">
+                        <i class="fas fa-gamepad text-2xl text-sea-700 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Сборка Игровых ПК</h4>
+                    <p class="text-gray-600 text-sm mb-4">Подбор комплектующих под бюджет, кабель-менеджмент, разгон.</p>
+                    <span class="text-sea-700 font-bold">от 2000 ₽</span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-6 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl transition bg-white group">
+                    <div class="w-16 h-16 bg-sea-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-sea-500 transition">
+                        <i class="fas fa-graduation-cap text-2xl text-sea-700 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Обучение для всех</h4>
+                    <p class="text-gray-600 text-sm mb-4">Курсы для пенсионеров, настройка Госуслуг, безопасный интернет.</p>
+                    <span class="text-sea-700 font-bold">от 800 ₽ / час</span>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-6 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl transition bg-white group">
+                    <div class="w-16 h-16 bg-sea-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-sea-500 transition">
+                        <i class="fas fa-shield-virus text-2xl text-sea-700 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Удаление вирусов</h4>
+                    <p class="text-gray-600 text-sm mb-4">Чистка системы, установка антивируса, восстановление данных.</p>
+                    <span class="text-sea-700 font-bold">от 600 ₽</span>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-6 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl transition bg-white group">
+                    <div class="w-16 h-16 bg-sea-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-sea-500 transition">
+                        <i class="fas fa-network-wired text-2xl text-sea-700 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Настройка сетей</h4>
+                    <p class="text-gray-600 text-sm mb-4">Wi-Fi роутеры, локальные сети, настройка принтеров.</p>
+                    <span class="text-sea-700 font-bold">от 1000 ₽</span>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-6 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl transition bg-white group">
+                    <div class="w-16 h-16 bg-sea-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-sea-500 transition">
+                        <i class="fas fa-laptop-code text-2xl text-sea-700 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Установка ПО</h4>
+                    <p class="text-gray-600 text-sm mb-4">Windows, Office, драйверы, кодеки, браузеры.</p>
+                    <span class="text-sea-700 font-bold">от 500 ₽</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Tools Section -->
+    <section id="tools" class="py-20 bg-tech-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold mb-4">Полезные Онлайн Инструменты</h3>
+                <p class="text-gray-400">Проверьте свой ПК прямо сейчас</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Tool 1: Speed Test -->
+                <div class="bg-tech-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                    <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-tachometer-alt text-sea-500"></i> Тест скорости интернета
+                    </h4>
+                    <div class="flex flex-col items-center justify-center py-8">
+                        <div class="relative w-48 h-48 mb-6">
+                            <svg class="w-full h-full transform -rotate-90">
+                                <circle cx="96" cy="96" r="88" stroke="#334155" stroke-width="12" fill="none" />
+                                <circle id="speed-circle" cx="96" cy="96" r="88" stroke="#00bcd4" stroke-width="12" fill="none" stroke-dasharray="552" stroke-dashoffset="552" class="speed-gauge" />
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <span id="speed-value" class="text-4xl font-bold">0</span>
+                                <span class="text-sm text-gray-400">Мбит/с</span>
+                            </div>
+                        </div>
+                        <button onclick="runSpeedTest()" class="bg-sea-500 hover:bg-sea-600 text-white px-6 py-2 rounded-lg font-bold transition">
+                            Начать тест
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tool 2: PSU Calculator -->
+                <div class="bg-tech-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                    <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-plug text-sea-500"></i> Калькулятор Блока Питания
+                    </h4>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Видеокарта (Вт)</label>
+                            <input type="number" id="gpu-watt" class="w-full bg-tech-900 border border-gray-600 rounded p-2 text-white" placeholder="Напр. 150">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Процессор (Вт)</label>
+                            <input type="number" id="cpu-watt" class="w-full bg-tech-900 border border-gray-600 rounded p-2 text-white" placeholder="Напр. 65">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">ОЗУ (планок)</label>
+                            <input type="number" id="ram-count" class="w-full bg-tech-900 border border-gray-600 rounded p-2 text-white" value="2">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">HDD/SSD (шт)</label>
+                            <input type="number" id="disk-count" class="w-full bg-tech-900 border border-gray-600 rounded p-2 text-white" value="2">
+                        </div>
+                    </div>
+                    <button onclick="calculatePSU()" class="w-full bg-sea-500 hover:bg-sea-600 text-white py-3 rounded-lg font-bold transition">
+                        Рассчитать мощность
+                    </button>
+                    <div id="psu-result" class="mt-4 text-center hidden">
+                        <p class="text-gray-300">Рекомендуемый БП:</p>
+                        <p class="text-2xl font-bold text-sea-400" id="psu-value">0 Вт</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3: Troubleshooting Wizard -->
+            <div class="mt-8 bg-tech-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i class="fas fa-stethoscope text-sea-500"></i> Быстрая диагностика
+                </h4>
+                <div id="wizard-container">
+                    <div id="step-1" class="wizard-step">
+                        <p class="mb-4 text-lg">Компьютер включается? (Загораются ли лампочки, шумят ли вентиляторы?)</p>
+                        <div class="flex gap-4">
+                            <button onclick="nextStep(2)" class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded text-white">Да</button>
+                            <button onclick="showResult('Проблема с питанием. Проверьте кабель, розетку или блок питания.')" class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded text-white">Нет</button>
+                        </div>
+                    </div>
+                    <div id="step-2" class="wizard-step hidden">
+                        <p class="mb-4 text-lg">Есть ли изображение на мониторе?</p>
+                        <div class="flex gap-4">
+                            <button onclick="showResult('Скорее всего проблема в Windows или драйверах. Попробуйте загрузиться в безопасном режиме.')" class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded text-white">Да</button>
+                            <button onclick="showResult('Проблема с видеокартой или оперативной памятью. Попробуйте переподключить их.')" class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded text-white">Нет (черный экран)</button>
+                        </div>
+                    </div>
+                    <div id="wizard-result" class="hidden text-center">
+                        <p class="text-xl mb-4" id="wizard-text"></p>
+                        <button onclick="resetWizard()" class="text-sea-500 underline">Начать заново</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Reviews -->
+    <section class="py-20 bg-sand-100">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://image.qwenlm.ai/public_source/e42ee1c9-4db4-4d89-bd47-32abca708c5d/15e9a6aca-35c1-4589-99b9-491d509847f2.png" alt="Мастер Михаил" class="rounded-2xl shadow-2xl">
+            </div>
+            <div class="md:w-1/2">
+                <h3 class="text-3xl font-bold text-tech-900 mb-4">Ваш мастер — Михаил</h3>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Я живу в Приморско-Ахтарске и знаю все местные особенности. Работаю честно, без навязывания лишних услуг. 
+                    Моя цель — не просто починить, а объяснить, что случилось, чтобы вы чувствовали себя уверенно.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-sea-500">
+                        <p class="italic text-gray-600">"Михаил спас мой ноутбук после того, как сын пролил на него чай. Думала, придется покупать новый, а он все починил!"</p>
+                        <p class="font-bold text-sm mt-2 text-tech-900">— Елена В., ул. Мира</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-sea-500">
+                        <p class="italic text-gray-600">"Собрал игровой комп сыну. Всё аккуратно, провода убрал, систему настроил. Рекомендую."</p>
+                        <p class="font-bold text-sm mt-2 text-tech-900">— Сергей, ст. Бриньковская</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Business -->
+    <section id="education" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold text-tech-900 mb-6 flex items-center gap-2">
+                        <i class="fas fa-chalkboard-teacher text-sea-500"></i> Обучение
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold">Компьютер для начинающих</h5>
+                                <p class="text-sm text-gray-600">Мышка, клавиатура, папки, интернет. Для тех, кто боится нажать "не туда".</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold">Госуслуги и Банки</h5>
+                                <p class="text-sm text-gray-600">Безопасная оплата ЖКХ, запись к врачу, заказ справок онлайн.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold">Продвинутый пользователь</h5>
+                                <p class="text-sm text-gray-600">Word, Excel, Skype/Zoom, обработка фото.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="mt-6 text-sea-600 font-bold hover:underline">Записаться на урок →</button>
+                </div>
+
+                <!-- Business -->
+                <div id="business">
+                    <h3 class="text-2xl font-bold text-tech-900 mb-6 flex items-center gap-2">
+                        <i class="fas fa-briefcase text-sea-500"></i> Для бизнеса
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Обслуживание офисов, кафе и магазинов в Приморско-Ахтарске.
+                    </p>
+                    <div class="bg-tech-900 text-white p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2 text-sea-400">Абонентское обслуживание</h4>
+                        <ul class="text-sm space-y-2 mb-4 text-gray-300">
+                            <li>• Выезд при поломке в день обращения</li>
+                            <li>• Настройка 1С и кассовых аппаратов</li>
+                            <li>• Резервное копирование баз данных</li>
+                            <li>• Фиксированная цена в месяц</li>
+                        </ul>
+                        <button onclick="document.getElementById('modal-form').classList.remove('hidden')" class="w-full bg-sea-500 hover:bg-sea-600 py-2 rounded font-bold">Обсудить условия</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts & Map -->
+    <section id="contacts" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-tech-900">Контакты</h3>
+                <p class="text-gray-600">Работаю по всему городу и выезжаю в станицы</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sea-100 rounded-full flex items-center justify-center text-sea-600 text-xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Телефон / WhatsApp</p>
+                                <a href="tel:+79183338669" class="text-xl font-bold hover:text-sea-600">+7 (918) 333-86-69</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sea-100 rounded-full flex items-center justify-center text-sea-600 text-xl">
+                                <i class="fab fa-telegram-plane"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Telegram</p>
+                                <a href="#" class="text-xl font-bold hover:text-sea-600">@Mikhail_PC</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sea-100 rounded-full flex items-center justify-center text-sea-600 text-xl">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Режим работы</p>
+                                <p class="text-lg font-bold">Круглосуточно (Звонки 08:00 - 22:00)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="mt-8 space-y-4">
+                        <h4 class="font-bold text-lg">Оставить заявку</h4>
+                        <input type="text" placeholder="Ваше имя" class="w-full border p-3 rounded bg-gray-50">
+                        <input type="tel" placeholder="Телефон" class="w-full border p-3 rounded bg-gray-50">
+                        <textarea placeholder="Опишите проблему" class="w-full border p-3 rounded bg-gray-50 h-24"></textarea>
+                        <button class="w-full bg-tech-900 text-white py-3 rounded font-bold hover:bg-tech-800">Отправить</button>
+                    </form>
+                </div>
+                
+                <div class="bg-white p-2 rounded-xl shadow-md h-full min-h-[400px]">
+                    <!-- Placeholder for Map -->
+                    <div class="w-full h-full bg-gray-200 rounded flex items-center justify-center relative overflow-hidden group">
+                        <img src="https://image.qwenlm.ai/public_source/e42ee1c9-4db4-4d89-bd47-32abca708c5d/1e67325e9-eda0-4e7b-94e6-f2ea34b9b136.png" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale" alt="Map Background">
+                        <div class="relative z-10 text-center">
+                            <i class="fas fa-map-marker-alt text-4xl text-red-500 mb-2 animate-bounce"></i>
+                            <p class="font-bold text-tech-900">Приморско-Ахтарск</p>
+                            <p class="text-sm text-gray-600">Выезд во все районы</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-tech-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Компьютерная помощь в Приморско-Ахтарске. Мастер Михаил.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white transition">Политика конфиденциальности</a>
+                <a href="#" class="hover:text-white transition">Договор оферты</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79183338669" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Modal Form -->
+    <div id="modal-form" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 relative shadow-2xl animate-[fadeIn_0.3s_ease-out]">
+            <button onclick="document.getElementById('modal-form').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-tech-900 mb-2">Вызов мастера</h3>
+            <p class="text-gray-600 mb-6">Оставьте номер, я перезвоню в течение 5 минут.</p>
+            <form onsubmit="event.preventDefault(); alert('Заявка отправлена! Михаил скоро свяжется с вами.'); document.getElementById('modal-form').classList.add('hidden');">
+                <input type="text" placeholder="Ваше имя" required class="w-full border border-gray-300 rounded-lg p-3 mb-4 focus:outline-none focus:border-sea-500">
+                <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full border border-gray-300 rounded-lg p-3 mb-6 focus:outline-none focus:border-sea-500">
+                <button type="submit" class="w-full bg-sea-500 hover:bg-sea-600 text-white font-bold py-3 rounded-lg transition">Жду звонка</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Speed Test Simulation
+        function runSpeedTest() {
+            const circle = document.getElementById('speed-circle');
+            const valueText = document.getElementById('speed-value');
+            const btn = document.querySelector('button[onclick="runSpeedTest()"]');
+            
+            btn.disabled = true;
+            btn.innerText = "Измерение...";
+            
+            let speed = 0;
+            const targetSpeed = Math.floor(Math.random() * (90 - 20) + 20); // Random speed between 20 and 90
+            
+            const interval = setInterval(() => {
+                if (speed >= targetSpeed) {
+                    clearInterval(interval);
+                    btn.disabled = false;
+                    btn.innerText = "Повторить тест";
+                } else {
+                    speed++;
+                    valueText.innerText = speed;
+                    // Calculate dashoffset for SVG circle (Circumference ~ 552)
+                    const offset = 552 - (speed / 100) * 552;
+                    circle.style.strokeDashoffset = offset;
+                }
+            }, 30); // Speed of increment
+        }
+
+        // PSU Calculator
+        function calculatePSU() {
+            const gpu = parseInt(document.getElementById('gpu-watt').value) || 0;
+            const cpu = parseInt(document.getElementById('cpu-watt').value) || 0;
+            const ram = parseInt(document.getElementById('ram-count').value) || 0;
+            const disk = parseInt(document.getElementById('disk-count').value) || 0;
+
+            // Simple estimation logic
+            const total = gpu + cpu + (ram * 5) + (disk * 10) + 50; // +50W for motherboard/fans
+            const recommended = Math.ceil(total / 0.7); // 70% load rule
+            const rounded = Math.ceil(recommended / 50) * 50; // Round to nearest 50
+
+            const resultDiv = document.getElementById('psu-result');
+            const valueSpan = document.getElementById('psu-value');
+            
+            resultDiv.classList.remove('hidden');
+            valueSpan.innerText = `${rounded} Вт`;
+        }
+
+        // Wizard Logic
+        function nextStep(step) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+        }
+
+        function showResult(text) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById('wizard-result').classList.remove('hidden');
+            document.getElementById('wizard-text').innerText = text;
+        }
+
+        function resetWizard() {
+            document.getElementById('wizard-result').classList.add('hidden');
+            document.getElementById('step-1').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
